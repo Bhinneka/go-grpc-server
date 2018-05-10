@@ -1,0 +1,29 @@
+syntax = "proto3";
+
+package bhinnekaner;
+
+message BhinnekanerQuery {
+	string ID = 1;
+}
+
+message BhinnekanerRequest {
+	string ID = 1;
+	string Name = 2;
+	string Email = 3;
+}
+
+message BhinnekanerResponse {
+	string ID = 1;
+	string Name = 2;
+	string Email = 3;
+}
+
+message Bhinnekaners {
+	repeated BhinnekanerResponse BhinnekanerResponses = 1;
+}
+
+service BhinnekanerService {
+	rpc Add (BhinnekanerRequest) returns (BhinnekanerResponse);
+	rpc FindByID (BhinnekanerQuery) returns (stream BhinnekanerResponse);
+	rpc FindAll (BhinnekanerQuery) returns (stream BhinnekanerResponse);
+}

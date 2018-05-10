@@ -1,0 +1,18 @@
+language: go
+sudo: required
+dist: trusty
+go:
+  - 1.10.1
+
+addons:
+  apt:
+    sources:
+    - sourceline: ppa:ubuntu-toolchain-r/test
+    packages:
+    - curl
+
+before_script:
+  - curl https://raw.githubusercontent.com/golang/dep/master/install.sh | sh
+
+script:
+  - dep ensure
