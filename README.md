@@ -1,6 +1,6 @@
 ## An Experimental GRPC Server using Go, Docker and Dep (Feel Free to Use this Code)
 
-## Recipes
+## Ingredients
    - Golang version 1.7+ https://golang.org/
 
    - Dep https://golang.github.io/dep/
